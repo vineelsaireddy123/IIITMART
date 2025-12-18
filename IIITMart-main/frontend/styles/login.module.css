@@ -1,0 +1,390 @@
+/* Professional Login Page CSS Module Styles */
+
+/* Main Container */
+.logincontainer {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Background Pattern Overlay */
+.logincontainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Login Form Container */
+.loginform {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #e2e8f0;
+  animation: slideUp 0.6s ease-out;
+  box-sizing: border-box;
+}
+
+/* Slide up animation for form */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.loginform h1 {
+  text-align: center;
+  color: #212529;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Form Groups - targeting Bootstrap classes within our module */
+.loginform .mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Form Labels */
+.loginform .form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.025em;
+}
+
+/* Form Controls */
+.loginform .form-control {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #1e293b;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.loginform .form-control:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  transform: translateY(-1px);
+}
+
+.loginform .form-control::placeholder {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* Hover effects for inputs */
+.loginform .form-control:hover:not(:focus) {
+  border-color: #64748b;
+}
+
+/* Submit Button */
+.loginform .btn-primary {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.loginform .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.loginform .btn-primary:hover::before {
+  left: 100%;
+}
+
+.loginform .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.loginform .btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Signup Link Section */
+.signupLink {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  color: #64748b;
+  text-decoration: none;
+}
+
+.signupLink span {
+  color: #64748b;
+}
+
+.signupLink a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.signupLink a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.signupLink a:hover::after {
+  width: 100%;
+}
+
+.signupLink a:hover {
+  color: #1d4ed8;
+}
+
+/* Alert Styles */
+.loginform .alert {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease-out;
+}
+
+.loginform .alert-danger {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-left-color: #ef4444;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Loading State */
+.loginform .btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Focus visible for accessibility */
+.loginform .form-control:focus-visible,
+.loginform .btn-primary:focus-visible,
+.signupLink a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Validation states */
+.loginform .form-control:invalid {
+  border-color: #ef4444;
+}
+
+.loginform .form-control:valid {
+  border-color: #10b981;
+}
+
+/* Loading spinner for submit button */
+.loginform .btn-primary.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logincontainer {
+    padding: 1rem 0.5rem;
+  }
+  
+  .loginform {
+    padding: 2rem 1.5rem;
+    margin: 1rem 0;
+    max-width: 100%;
+  }
+  
+  .loginform h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .loginform .form-control {
+    padding: 0.75rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .loginform .btn-primary {
+    padding: 0.875rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginform {
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .loginform h1 {
+    font-size: 1.5rem;
+  }
+  
+  .loginform .mb-4 {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .loginform .form-control {
+    border-width: 3px;
+  }
+  
+  .loginform .btn-primary {
+    border: 2px solid #2563eb;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .loginform,
+  .loginform .btn-primary,
+  .loginform .form-control,
+  .signupLink a {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .logincontainer {
+    background: #f8fafc;
+  }
+  
+  .loginform {
+    background: #ffffff;
+    color: #1e293b;
+  }
+  
+  .loginform h1 {
+    color: #1e293b;
+  }
+  
+  .loginform .form-label {
+    color: #1e293b;
+  }
+  
+  .loginform .form-control {
+    background-color: #ffffff;
+    color: #1e293b;
+    border-color: #e2e8f0;
+  }
+  
+  .loginform .form-control::placeholder {
+    color: #94a3b8;
+  }
+  
+  .signupLink,
+  .signupLink span {
+    color: #64748b;
+  }
+  
+  .loginform .alert-danger {
+    background-color: #fef2f2;
+    color: #991b1b;
+  }
+}
+
+/* Print styles */
+@media print {
+  .logincontainer {
+    background: white;
+  }
+  
+  .loginform {
+    box-shadow: none;
+    border: 2px solid #000;
+  }
+  
+  .loginform .btn-primary {
+    background: white;
+    color: black;
+    border: 2px solid black;
+  }
+}
